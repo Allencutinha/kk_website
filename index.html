@@ -46,10 +46,12 @@
   }
   .nav-logo .logo-icon {
     width: 40px; height: 40px;
-    background: linear-gradient(135deg, var(--saffron), var(--gold));
     border-radius: 50%;
+    overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; color: white;
+  }
+  .nav-logo .logo-icon img {
+    width: 100%; height: 100%; object-fit: cover;
   }
   .nav-logo span {
     font-family: 'Playfair Display', serif;
@@ -451,7 +453,7 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#" onclick="showSection('home')">
-    <div class="logo-icon">✦</div>
+    <div class="logo-icon"><img src="Images/kk_logo.png" alt="Konkani Kutam Logo"></div>
     <div>
       <span>Konkani Kutam</span>
       <small>Deutschland</small>
