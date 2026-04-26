@@ -98,8 +98,8 @@
   .hero {
     min-height: 100vh;
     background:
-      linear-gradient(160deg, rgba(9,22,80,0.88) 0%, rgba(27,62,168,0.52) 50%, rgba(9,22,80,0.84) 100%),
-      url('https://images.unsplash.com/photo-1567005753256-c0529035b300?w=1600&q=80') center/cover no-repeat;
+      linear-gradient(160deg, rgba(8,35,20,0.85) 0%, rgba(30,90,50,0.50) 50%, rgba(8,35,20,0.82) 100%),
+      url('Images/beach.jpg') center/cover no-repeat;
     display: flex; align-items: center; justify-content: center;
     text-align: center; position: relative; overflow: hidden;
     padding: 0 1.5rem;
@@ -124,7 +124,7 @@
     font-size: clamp(2.8rem, 7vw, 5.5rem);
     color: var(--cream); line-height: 1.1; margin-bottom: 0.4rem;
   }
-  .hero h1 em { color: var(--saffron); font-style: italic; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
   .hero-tagline {
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: rgba(253,246,236,0.8);
@@ -140,6 +140,8 @@
   }
   .btn-primary { background: var(--saffron); color: white; }
   .btn-primary:hover { background: #d4641a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,114,26,0.45); }
+  .hero .btn-primary { background: var(--gold); color: var(--dark); }
+  .hero .btn-primary:hover { background: #d4a614; box-shadow: 0 8px 24px rgba(232,184,32,0.4); }
   .btn-outline { border: 1.5px solid rgba(253,246,236,0.5); color: var(--cream); background: transparent; }
   .btn-outline:hover { background: rgba(253,246,236,0.08); }
 
@@ -564,7 +566,7 @@
   <!-- Hero -->
   <div class="hero">
     <div class="hero-content">
-      <p class="hero-eyebrow">🌺 Konkan Catholics in Germany</p>
+      <p class="hero-eyebrow"> Konkan Catholics in Germany</p>
       <h1>Amche <em>Kutam</em>,<br>Amche Ghar</h1>
       <p class="hero-tagline">Our Family, Our Home. Bringing together Konkani Catholics from across Germany — keeping our faith, culture, and language alive, far from the shores of Konkan.</p>
       <div class="hero-cta">
@@ -583,9 +585,9 @@
 
   <!-- Stats -->
   <div class="stats-bar">
-    <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Members</div></div>
+    <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Members</div></div>
     <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Cities Represented</div></div>
-    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Events Annually</div></div>
+    <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Events Annually</div></div>
     <div class="stat"><div class="stat-num">2015</div><div class="stat-label">Year Founded</div></div>
   </div>
 
@@ -675,9 +677,7 @@
       </div>
       <div class="about-text">
         <h2>Our <em>Story</em></h2>
-        <p>Konkani Kutam (meaning "Konkani Family") was founded in 2015 by a small group of Konkani Catholic families scattered across Germany who felt the familiar longing — the longing for community, for the sound of Konkani in the air, for the smell of Monthi Fest flowers, and for the warmth of a church that felt like home.</p>
-        <p>Today we are a vibrant, growing association connecting over 200 members from cities including Frankfurt, Munich, Berlin, Stuttgart, Cologne, Hamburg, Düsseldorf and beyond. We are registered as a non-profit association (<em>eingetragener Verein – e.V.</em>) in Germany, governed by an elected committee of volunteers passionate about our heritage.</p>
-        <p>We are proudly Mangalorean — descendants of the Catholics of the Konkan coast, whose ancestors were baptised centuries ago and whose culture is a beautiful blend of Goan-Portuguese, Indian, and now German influences. We carry that story forward with joy.</p>
+        <div id="story-content"></div>
         <div class="about-pillars">
           <span class="pillar-tag">Faith</span>
           <span class="pillar-tag">Culture</span>
@@ -1068,6 +1068,13 @@
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
+
+  fetch('docs/our-story.txt')
+    .then(r => r.text())
+    .then(text => {
+      document.getElementById('story-content').innerHTML =
+        text.trim().split(/\n\n+/).map(p => `<p>${p.trim()}</p>`).join('');
+    });
 
   function filterGallery(category, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
