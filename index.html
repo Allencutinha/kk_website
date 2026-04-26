@@ -553,18 +553,22 @@
     color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin: 0.35rem 0;
   }
 
-  /* ── WHY KONKANI KUTAM — green / sky-blue card icons ── */
+  /* ── WHY KONKANI KUTAM — photo card icons ── */
   .home-features .card-icon {
-    background: linear-gradient(135deg, #82A85E, #5E8A40);
+    background: var(--dark);
+    height: 180px;
+    overflow: hidden;
+    padding: 0;
   }
-  .home-features .card:nth-child(even) .card-icon {
-    background: linear-gradient(135deg, #5A90B8, #3D6F95);
+  .home-features .card-icon img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s;
+  }
+  .home-features .card:hover .card-icon img {
+    transform: scale(1.06);
   }
   .home-features .card:hover {
-    box-shadow: 0 16px 40px rgba(90,144,184,0.14);
-  }
-  .home-features .card:nth-child(odd):hover {
-    box-shadow: 0 16px 40px rgba(130,168,94,0.14);
+    box-shadow: 0 16px 40px rgba(27,62,168,0.16);
   }
 
   /* ── HOME EXTRAS ── */
