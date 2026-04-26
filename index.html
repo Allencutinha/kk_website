@@ -16,6 +16,8 @@
     --muted: #5A6D96;            /* blue-gray — secondary text */
     --card-bg: #FEFCF4;          /* light cream — card backgrounds */
     --border: rgba(27,62,168,0.18); /* blue-tinted border */
+    --logo-green: #6DC42A;          /* lime green — logo figure */
+    --logo-sky: #00AADD;            /* sky blue — logo figure */
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -502,6 +504,20 @@
   .lightbox-label h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
   .lightbox-label span { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
 
+  /* ── WHY KONKANI KUTAM — green / sky-blue card icons ── */
+  .home-features .card-icon {
+    background: linear-gradient(135deg, var(--logo-green), #52A820);
+  }
+  .home-features .card:nth-child(even) .card-icon {
+    background: linear-gradient(135deg, var(--logo-sky), #0088BB);
+  }
+  .home-features .card:hover {
+    box-shadow: 0 16px 40px rgba(0,170,221,0.14);
+  }
+  .home-features .card:nth-child(odd):hover {
+    box-shadow: 0 16px 40px rgba(109,196,42,0.14);
+  }
+
   /* Home page extra content */
   .home-features { background: white; }
   .values-section { background: var(--cream); }
@@ -562,7 +578,7 @@
   <!-- Event Banner -->
   <div class="event-banner">
     <span class="badge">🎉 Next Big Event</span>
-    <p><strong>Monthi Fest 2025</strong> — The Feast of Our Lady of the Nativity &nbsp;·&nbsp; <a href="#" onclick="showSection('events')">Learn More →</a></p>
+    <p><strong>Summer Fest 2026</strong> — 11 July · Frankfurt &nbsp;·&nbsp; <a href="#" onclick="showSection('events')">Learn More →</a></p>
   </div>
 
   <!-- Stats -->
@@ -727,33 +743,23 @@
     <div class="monthi-spotlight">
       <h3>⭐ <em>Monthi Fest</em> — Our Grandest Celebration</h3>
       <p>The Feast of Our Lady of the Nativity (8 September) is the most beloved festival of Mangalorean Catholics. At Konkani Kutam, it is our biggest annual event — a full day of Holy Mass, cultural performances, traditional food, and the timeless ritual of the first harvest offering. Families come from across Germany to celebrate together.</p>
-      <span class="highlight-line">🌸 &nbsp; September 2025 &nbsp; · &nbsp; Venue to be announced &nbsp; · &nbsp; All are welcome</span>
+      <span class="highlight-line">🌸 &nbsp; 12 September 2026 &nbsp; · &nbsp; Frankfurt &nbsp; · &nbsp; All are welcome</span>
     </div>
 
     <!-- Events List -->
     <div class="events-list">
       <div class="event-card">
-        <div class="event-date"><div class="month">Sep</div><div class="day">8</div><div class="year">2025</div></div>
+        <div class="event-date"><div class="month">Feb</div><div class="day">14</div><div class="year">2026</div></div>
         <div class="event-info">
-          <h3>🌸 Monthi Fest — Feast of Our Lady of the Nativity</h3>
-          <p>Our biggest event of the year. Holy Mass, traditional Monthi Fest feast, cultural programme, Konkani songs and skits, first-harvest blessing, and the famous Konkani potluck spread. The one event no Mangalorean in Germany should miss.</p>
-          <div class="event-meta"><span>📍 Frankfurt (TBC)</span><span>🕙 10:00 AM onwards</span><span>🎤 Cultural Programme</span></div>
+          <h3>📋 Annual General Meeting (AGM)</h3>
+          <p>Our yearly members' meeting where we review the year's activities, present accounts, discuss proposals, and elect the committee. Every member has a voice. Followed by an informal networking dinner.</p>
+          <div class="event-meta"><span>📍 Frankfurt</span><span>🕕 5:00 PM</span><span>🗳️ Members Only</span></div>
         </div>
-        <span class="event-badge badge-highlight">Flagship</span>
+        <span class="event-badge badge-annual">Members</span>
       </div>
 
       <div class="event-card">
-        <div class="event-date"><div class="month">Dec</div><div class="day">21</div><div class="year">2025</div></div>
-        <div class="event-info">
-          <h3>🎄 Christmas Celebration</h3>
-          <p>A joyful Konkani Christmas evening with carols in Konkani, the Nativity play, secret Santa, children's choir, and a festive dinner together. Because Christmas is better when you celebrate it with family — and Konkani Kutam is your German family.</p>
-          <div class="event-meta"><span>📍 Cologne</span><span>🕕 5:00 PM onwards</span><span>🎅 Family Event</span></div>
-        </div>
-        <span class="event-badge badge-upcoming">Upcoming</span>
-      </div>
-
-      <div class="event-card">
-        <div class="event-date"><div class="month">Apr</div><div class="day">19</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month">Apr</div><div class="day">5</div><div class="year">2026</div></div>
         <div class="event-info">
           <h3>✝️ Easter Gathering</h3>
           <p>A spiritual and joyful celebration of the Resurrection. We come together for a shared Easter brunch, Easter egg hunt for children, and a community prayer service. A reminder that faith and fellowship go hand in hand.</p>
@@ -763,23 +769,33 @@
       </div>
 
       <div class="event-card">
-        <div class="event-date"><div class="month">Jul</div><div class="day">5</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month">Jul</div><div class="day">11</div><div class="year">2026</div></div>
         <div class="event-info">
           <h3>☀️ Summer Fest</h3>
           <p>Our beloved outdoor summer gathering — a picnic-style festival with sports, barbecue, Konkani games, music, and fun for the whole family. A beautiful long German summer day spent with your community in the open air.</p>
-          <div class="event-meta"><span>📍 Stuttgart</span><span>🕙 12:00 PM</span><span>🎮 Sports & Games</span></div>
+          <div class="event-meta"><span>📍 Frankfurt</span><span>🕙 12:00 PM</span><span>🎮 Sports & Games</span></div>
         </div>
         <span class="event-badge badge-annual">Annual</span>
       </div>
 
       <div class="event-card">
-        <div class="event-date"><div class="month">Feb</div><div class="day">2</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month">Sep</div><div class="day">12</div><div class="year">2026</div></div>
         <div class="event-info">
-          <h3>📋 Annual General Meeting (AGM)</h3>
-          <p>Our yearly members' meeting where we review the year's activities, present accounts, discuss proposals, and elect the committee. Every member has a voice. Followed by an informal networking dinner.</p>
-          <div class="event-meta"><span>📍 Frankfurt</span><span>🕕 5:00 PM</span><span>🗳️ Members Only</span></div>
+          <h3>🌸 Monthi Fest — Feast of Our Lady of the Nativity</h3>
+          <p>Our biggest event of the year. Holy Mass, traditional Monthi Fest feast, cultural programme, Konkani songs and skits, first-harvest blessing, and the famous Konkani potluck spread. The one event no Mangalorean in Germany should miss.</p>
+          <div class="event-meta"><span>📍 Frankfurt</span><span>🕙 10:00 AM onwards</span><span>🎤 Cultural Programme</span></div>
         </div>
-        <span class="event-badge badge-annual">Members</span>
+        <span class="event-badge badge-highlight">Flagship</span>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date"><div class="month">Dec</div><div class="day">12</div><div class="year">2026</div></div>
+        <div class="event-info">
+          <h3>🎄 Christmas Celebration</h3>
+          <p>A joyful Konkani Christmas evening with carols in Konkani, the Nativity play, secret Santa, children's choir, and a festive dinner together. Because Christmas is better when you celebrate it with family — and Konkani Kutam is your German family.</p>
+          <div class="event-meta"><span>📍 Stuttgart</span><span>🕕 5:00 PM onwards</span><span>🎅 Family Event</span></div>
+        </div>
+        <span class="event-badge badge-upcoming">Upcoming</span>
       </div>
     </div>
 
