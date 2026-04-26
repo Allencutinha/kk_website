@@ -18,6 +18,8 @@
     --border: rgba(27,62,168,0.18); /* blue-tinted border */
     --logo-green: #6DC42A;          /* lime green — logo figure */
     --logo-sky: #00AADD;            /* sky blue — logo figure */
+    --magenta: #D81B78;             /* hot pink — logo figure */
+    --purple: #7B2DB8;              /* purple — logo figure */
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -187,7 +189,7 @@
 
   /* ── UPCOMING EVENT BANNER ── */
   .event-banner {
-    background: linear-gradient(90deg, var(--deep-red), #0A1650);
+    background: linear-gradient(90deg, var(--magenta), var(--purple));
     color: white; padding: 1rem 2rem;
     display: flex; align-items: center; justify-content: center; gap: 1.5rem;
     flex-wrap: wrap; text-align: center;
@@ -235,7 +237,7 @@
   .about-img-block {
     position: relative; border-radius: 16px; overflow: hidden;
     height: 400px;
-    background: linear-gradient(135deg, var(--deep-red) 0%, var(--saffron) 100%);
+    background: linear-gradient(135deg, var(--purple) 0%, var(--magenta) 100%);
     display: flex; align-items: center; justify-content: center; font-size: 7rem;
   }
   .about-img-block img {
@@ -292,7 +294,7 @@
   .event-card:hover { transform: translateX(4px); box-shadow: -4px 0 0 var(--saffron), 0 8px 24px rgba(0,0,0,0.06); }
   .event-date {
     text-align: center;
-    background: linear-gradient(135deg, var(--deep-red), var(--saffron));
+    background: linear-gradient(135deg, var(--magenta), var(--purple));
     border-radius: 8px; padding: 0.75rem 0.5rem; color: white;
   }
   .event-date .month { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; }
@@ -315,7 +317,7 @@
 
   /* ── MONTHI FEST SPOTLIGHT ── */
   .monthi-spotlight {
-    background: linear-gradient(135deg, var(--deep-red) 0%, #091650 100%);
+    background: linear-gradient(135deg, var(--purple) 0%, #3A0A6E 100%);
     border-radius: 16px; padding: 3rem; color: white;
     text-align: center; margin: 3rem 0; position: relative; overflow: hidden;
   }
@@ -341,7 +343,7 @@
   .initiative-card {
     background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
     padding: 2rem;
-    border-left: 4px solid var(--saffron);
+    border-left: 4px solid var(--magenta);
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .initiative-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(27,62,168,0.12); }
@@ -351,7 +353,7 @@
 
   /* ── MEMBERSHIP ── */
   .membership-hero {
-    background: linear-gradient(135deg, var(--dark) 0%, #0D246E 100%);
+    background: linear-gradient(135deg, var(--purple) 0%, var(--dark) 100%);
     padding: 4rem 2rem; text-align: center; color: var(--cream);
   }
   .membership-hero h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 0.75rem; }
@@ -478,7 +480,7 @@
   .gallery-caption h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; margin-bottom: 0.2rem; }
   .gallery-caption span { font-size: 0.72rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; }
 
-  /* Lightbox */
+  /* ── LIGHTBOX ── */
   .lightbox {
     display: none; position: fixed; inset: 0; z-index: 2000;
     background: rgba(10,6,2,0.93); align-items: center; justify-content: center;
@@ -520,11 +522,10 @@
     box-shadow: 0 16px 40px rgba(130,168,94,0.14);
   }
 
-  /* Home page extra content */
+  /* ── HOME EXTRAS ── */
   .home-features { background: white; }
-  .values-section { background: var(--cream); }
   .quote-section {
-    background: linear-gradient(135deg, var(--dark), #0D246E);
+    background: linear-gradient(135deg, var(--dark), var(--purple));
     padding: 5rem 2rem; text-align: center; color: white;
   }
   .quote-section blockquote {
@@ -560,468 +561,13 @@
   </div>
 </nav>
 
-<!-- ══════════════ HOME ══════════════ -->
-<section id="home" class="active">
-
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow"> Konkan Catholics in Germany</p>
-      <h1>Amche <em>Kutam</em>,<br>Amche Ghar</h1>
-      <p class="hero-tagline">Our Family, Our Home. Bringing together Konkani Catholics from across Germany — keeping our faith, culture, and language alive, far from the shores of Konkan.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#" onclick="showSection('membership')">Become a Member</a>
-        <a class="btn btn-outline" href="#" onclick="showSection('events')">Our Events</a>
-      </div>
-    </div>
-    <div class="hero-scroll">▼ &nbsp; Scroll</div>
-  </div>
-
-  <!-- Event Banner -->
-  <div class="event-banner">
-    <span class="badge">🎉 Next Big Event</span>
-    <p><strong>Summer Fest 2026</strong> — 11 July · Frankfurt &nbsp;·&nbsp; <a href="#" onclick="showSection('events')">Learn More →</a></p>
-  </div>
-
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Members</div></div>
-    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Cities Represented</div></div>
-    <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Events Annually</div></div>
-    <div class="stat"><div class="stat-num">2003</div><div class="stat-label">Year Founded</div></div>
-  </div>
-
-  <!-- Welcome -->
-  <div class="welcome-strip">
-    <p>
-      <strong>Deu boro dis dium!</strong> Whether you moved to Germany last month or have called it home for years — you are not alone. Konkani Kutam is your <strong>Konkan family in Germany</strong>, a warm community that celebrates our shared roots, supports one another through life abroad, and ensures our children grow up proud of who we are.
-    </p>
-  </div>
-
-  <!-- Why Join -->
-  <div class="home-features">
-    <div class="section-wrapper">
-      <div class="section-header">
-        <div class="divider"><span>✦</span></div>
-        <h2>Why <em>Konkani Kutam?</em></h2>
-        <p>Because home isn't just a place — it's a feeling. We recreate that feeling right here in Germany.</p>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🏡</div>
-          <div class="card-body">
-            <h3>A Community Away From Home</h3>
-            <p>Connect with fellow Konkani people across Germany — share meals, stories, and the comfort of people who truly understand where you come from.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">🙏</div>
-          <div class="card-body">
-            <h3>Faith & Traditions</h3>
-            <p>We celebrate the traditions of our Catholic faith together — Monthi Fest, Christmas, Easter — just as our families do back in Mangalore.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">🗣️</div>
-          <div class="card-body">
-            <h3>Konkani Language & Culture</h3>
-            <p>Konkani classes, cultural programmes, and a community that actively uses the language — so our children know and love their mother tongue.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">👨‍👩‍👧‍👦</div>
-          <div class="card-body">
-            <h3>Family Support Network</h3>
-            <p>Newcomer assistance, school guidance, integration tips, and a trusted network of families who've been in your shoes.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">🍱</div>
-          <div class="card-body">
-            <h3>Food & Festivities</h3>
-            <p>From pork bafat and neer dosa to sorpotel and rose cookies — we come together over the food that reminds us of home.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-icon">🌍</div>
-          <div class="card-body">
-            <h3>The Best of Both Worlds</h3>
-            <p>Embrace life in Germany while staying proudly Mangalorean. We help our community thrive in Europe without losing their roots.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Quote -->
-  <div class="quote-section">
-    <div class="divider" style="max-width:200px; margin: 0 auto 2rem; color: rgba(232,184,32,0.7)"><span>✦</span></div>
-    <blockquote>"Wherever a Kodialgar is, home is never far, as long as we are together."</blockquote>
-    <cite>— Konkani Kutam, Germany</cite>
-  </div>
-
-</section>
-
-<!-- ══════════════ ABOUT ══════════════ -->
-<section id="about">
-  <div class="section-wrapper">
-    <div class="section-header">
-      <div class="divider"><span>✦</span></div>
-      <h2>About <em>Konkani Kutam</em></h2>
-      <p>Who we are, what we stand for, and the people who make this community thrive.</p>
-    </div>
-
-    <div class="about-grid" style="margin-bottom: 5rem;">
-      <div class="about-img-block">
-        <img src="Images/Konkani_kutam.jpg" alt="Konkani Kutam community">
-      </div>
-      <div class="about-text">
-        <h2>Our <em>Story</em></h2>
-        <div id="story-content"></div>
-        <div class="about-pillars">
-          <span class="pillar-tag">Faith</span>
-          <span class="pillar-tag">Culture</span>
-          <span class="pillar-tag">Language</span>
-          <span class="pillar-tag">Community</span>
-          <span class="pillar-tag">Family</span>
-          <span class="pillar-tag">Heritage</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mission / Vision -->
-    <div class="cards" style="margin-bottom: 4rem;">
-      <div class="card">
-        <div class="card-icon" style="font-size:2rem; height:80px;">🎯</div>
-        <div class="card-body">
-          <h3>Our Mission</h3>
-          <p>To unite Konkani Catholics residing in Germany under one umbrella, preserving our faith, culture, and language while supporting one another in building a fulfilling life in Europe.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-icon" style="font-size:2rem; height:80px;">🌟</div>
-        <div class="card-body">
-          <h3>Our Vision</h3>
-          <p>A thriving Konkani diaspora community in Germany where every generation — from grandparents to grandchildren — feels a proud, living connection to our Mangalorean identity.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-icon" style="font-size:2rem; height:80px;">⚖️</div>
-        <div class="card-body">
-          <h3>Our Values</h3>
-          <p>Inclusivity, respect, faith, volunteerism, and the Mangalorean spirit of hospitality — <em>aamogelan</em>. Every member is family.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Committee -->
-    <div class="section-header">
-      <h2>Our <em>Committee</em></h2>
-      <p>Volunteers who give their time, heart, and energy to keep our community alive and thriving.</p>
-    </div>
-    <div class="team-grid">
-      <div class="member-card"><div class="member-avatar"><img src="Images/president_keeth.png" alt="Keeth"></div><h4>Keeth Noronha</h4><span>President</span></div>
-      <div class="member-card"><div class="member-avatar"><img src="Images/vice_president_allen_cutinha.png" alt="Allen Cutinha"></div><h4>Allen Cutinha</h4><span>Vice President</span></div>
-      <div class="member-card"><div class="member-avatar"><img src="Images/secretary_praveen.png" alt="Praveen"></div><h4>Praveen Serrao</h4><span>Secretary</span></div>
-      <div class="member-card"><div class="member-avatar"><img src="Images/secreatary_nandan.png" alt="Nandan"></div><h4>Nandan</h4><span>Joint Secretary</span></div>
-      <div class="member-card"><div class="member-avatar"><img src="Images/treasurer_priya.png" alt="Priya"></div><h4>Priya Lobo</h4><span>Treasurer</span></div>
-      <div class="member-card"><div class="member-avatar"><img src="Images/culural_secreatary_steffi.png" alt="Steffi"></div><h4>Steffi Pereira</h4><span>Cultural Secretary</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ EVENTS ══════════════ -->
-<section id="events">
-  <div class="section-wrapper">
-    <div class="section-header">
-      <div class="divider"><span>✦</span></div>
-      <h2>Our <em>Events</em></h2>
-      <p>Every celebration is a chance to come together, reconnect, and remind ourselves of who we are and where we come from.</p>
-    </div>
-
-    <!-- Monthi Fest Spotlight -->
-    <div class="monthi-spotlight">
-      <h3>⭐ <em>Monthi Fest</em> — Our Grandest Celebration</h3>
-      <p>The Feast of Our Lady of the Nativity (8 September) is the most beloved festival of Mangalorean Catholics. At Konkani Kutam, it is our biggest annual event — a full day of Holy Mass, cultural performances, traditional food, and the timeless ritual of the first harvest offering. Families come from across Germany to celebrate together.</p>
-      <span class="highlight-line">🌸 &nbsp; 12 September 2026 &nbsp; · &nbsp; Frankfurt &nbsp; · &nbsp; All are welcome</span>
-    </div>
-
-    <!-- Events List -->
-    <div class="events-list">
-      <div class="event-card">
-        <div class="event-date"><div class="month">Feb</div><div class="day">14</div><div class="year">2026</div></div>
-        <div class="event-info">
-          <h3>📋 Annual General Meeting (AGM)</h3>
-          <p>Our yearly members' meeting where we review the year's activities, present accounts, discuss proposals, and elect the committee. Every member has a voice. Followed by an informal networking dinner.</p>
-          <div class="event-meta"><span>📍 Frankfurt</span><span>🕕 5:00 PM</span><span>🗳️ Members Only</span></div>
-        </div>
-        <span class="event-badge badge-annual">Members</span>
-      </div>
-
-      <div class="event-card">
-        <div class="event-date"><div class="month">Apr</div><div class="day">5</div><div class="year">2026</div></div>
-        <div class="event-info">
-          <h3>✝️ Easter Gathering</h3>
-          <p>A spiritual and joyful celebration of the Resurrection. We come together for a shared Easter brunch, Easter egg hunt for children, and a community prayer service. A reminder that faith and fellowship go hand in hand.</p>
-          <div class="event-meta"><span>📍 Munich</span><span>🕙 11:00 AM</span><span>🐣 Family & Kids</span></div>
-        </div>
-        <span class="event-badge badge-annual">Annual</span>
-      </div>
-
-      <div class="event-card">
-        <div class="event-date"><div class="month">Jul</div><div class="day">11</div><div class="year">2026</div></div>
-        <div class="event-info">
-          <h3>☀️ Summer Fest</h3>
-          <p>Our beloved outdoor summer gathering — a picnic-style festival with sports, barbecue, Konkani games, music, and fun for the whole family. A beautiful long German summer day spent with your community in the open air.</p>
-          <div class="event-meta"><span>📍 Frankfurt</span><span>🕙 12:00 PM</span><span>🎮 Sports & Games</span></div>
-        </div>
-        <span class="event-badge badge-annual">Annual</span>
-      </div>
-
-      <div class="event-card">
-        <div class="event-date"><div class="month">Sep</div><div class="day">12</div><div class="year">2026</div></div>
-        <div class="event-info">
-          <h3>🌸 Monthi Fest — Feast of Our Lady of the Nativity</h3>
-          <p>Our biggest event of the year. Holy Mass, traditional Monthi Fest feast, cultural programme, Konkani songs and skits, first-harvest blessing, and the famous Konkani potluck spread. The one event no Mangalorean in Germany should miss.</p>
-          <div class="event-meta"><span>📍 Frankfurt</span><span>🕙 10:00 AM onwards</span><span>🎤 Cultural Programme</span></div>
-        </div>
-        <span class="event-badge badge-highlight">Flagship</span>
-      </div>
-
-      <div class="event-card">
-        <div class="event-date"><div class="month">Dec</div><div class="day">12</div><div class="year">2026</div></div>
-        <div class="event-info">
-          <h3>🎄 Christmas Celebration</h3>
-          <p>A joyful Konkani Christmas evening with carols in Konkani, the Nativity play, secret Santa, children's choir, and a festive dinner together. Because Christmas is better when you celebrate it with family — and Konkani Kutam is your German family.</p>
-          <div class="event-meta"><span>📍 Stuttgart</span><span>🕕 5:00 PM onwards</span><span>🎅 Family Event</span></div>
-        </div>
-        <span class="event-badge badge-upcoming">Upcoming</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════ INITIATIVES ══════════════ -->
-<section id="initiatives">
-  <div class="section-wrapper">
-    <div class="section-header">
-      <div class="divider"><span>✦</span></div>
-      <h2>Our Planned <em>Initiatives</em></h2>
-      <p>Beyond events, we run year-round programmes that nurture our culture, support our families, and strengthen our community.</p>
-    </div>
-
-    <div class="initiatives-grid">
-      <div class="initiative-card">
-        <div class="init-icon">🗣️</div>
-        <h3>Konkani Language Classes</h3>
-        <p>Monthly online and in-person classes for children and adults. From basic conversational Konkani to reading the Devanagari script — because every generation should be able to speak the language of their ancestors. Taught by volunteer teachers from within our community.</p>
-      </div>
-      <div class="initiative-card">
-        <div class="init-icon">🎵</div>
-        <h3>Cultural Programmes & Arts</h3>
-        <p>Dance, drama, music, and poetry in Konkani. We train children and youth in traditional Konkani folk dances, Konkani folk songs (Mando, Dulpod), and stage performances at our annual events — keeping our performing arts alive in Germany.</p>
-      </div>
-      <div class="initiative-card">
-        <div class="init-icon">🤝</div>
-        <h3>Newcomer Welcome Programme</h3>
-        <p>Just arrived in Germany? We connect you with a buddy from our community who helps you navigate registration, insurance, schools, healthcare, and the unwritten rules of German life — in Konkani or English, whichever feels like home.</p>
-      </div>
-      <div class="initiative-card">
-        <div class="init-icon">👶</div>
-        <h3>Konkani Kids Club</h3>
-        <p>A dedicated space for children of our community to meet, play, and grow up knowing their heritage. Monthly gatherings with storytelling, crafts, Konkani rhymes, and activities rooted in our culture — making childhood memories that connect them to Mangalore.</p>
-      </div>
-      <div class="initiative-card">
-        <div class="init-icon">👩‍💼</div>
-        <h3>Women's Circle</h3>
-        <p>A support and social network for Konkani women in Germany. Monthly meetups, discussions on work-life balance as an immigrant woman, recipe swaps, and a safe sisterhood for women navigating German life while holding onto their roots.</p>
-      </div>
-      <div class="initiative-card">
-        <div class="init-icon">🍽️</div>
-        <h3>Konkani Kitchen</h3>
-        <p>Online and in-person workshops where community members share authentic Mangalorean recipes — from Chicken Ghee Roast and Fish Curry Rice to Pork Bafat, Sannas, and Rose Cookies. Preserving our food culture, one recipe at a time.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════ MEMBERSHIP ══════════════ -->
-<section id="membership">
-  <div class="membership-hero">
-    <h2>Join <em>Konkani Kutam</em></h2>
-    <p>Become part of Germany's most vibrant Mangalorean Catholic community. Your family is here — all you have to do is reach out.</p>
-  </div>
-
-  <div class="section-wrapper">
-    <div class="section-header" style="margin-bottom: 2.5rem;">
-      <h2>Membership <em>Plans</em></h2>
-      <p>Simple, affordable membership that gives you access to our entire community, all events, and all initiatives.</p>
-    </div>
-
-    <div class="plans">
-      <div class="plan">
-        <h3>Individual</h3>
-        <div class="price"><sup>€</sup>10<small>/year</small></div>
-        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.5rem;">Perfect for single members</p>
-        <ul>
-          <li>Access to all community events</li>
-          <li>Voting rights at AGM</li>
-          <li>Priority event registration</li>
-          <li>Initiatives & workshops</li>
-          <li>Newcomer support network</li>
-        </ul>
-        <button class="btn btn-outline" style="width:100%; border-color: var(--border); color: var(--saffron);" onclick="document.querySelector('.mem-form-wrapper').scrollIntoView({behavior:'smooth'})">Get Started</button>
-      </div>
-
-      <div class="plan featured">
-        <h3>Family</h3>
-        <div class="price"><sup>€</sup>15<small>/year</small></div>
-        <p style="font-size:0.82rem;margin-bottom:0.5rem; opacity:0.85;">Up to 2 adults + children</p>
-        <ul>
-          <li>Everything in Individual</li>
-          <li>Kids Club membership</li>
-          <li>Konkani language classes</li>
-          <li>Cultural programme participation</li>
-        </ul>
-        <button class="btn" style="background: white; color: var(--saffron); width:100%;" onclick="document.querySelector('.mem-form-wrapper').scrollIntoView({behavior:'smooth'})">Join as Family ★</button>
-      </div>
-
-      <div class="plan">
-        <h3>Student</h3>
-        <div class="price"><sup>€</sup>8<small>/year</small></div>
-        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0.5rem;">Full-time students in Germany</p>
-        <ul>
-          <li>Access to all community events</li>
-          <li>Priority event registration</li>
-          <li>Newcomer support</li>
-        </ul>
-        <button class="btn btn-outline" style="width:100%; border-color: var(--border); color: var(--saffron);" onclick="document.querySelector('.mem-form-wrapper').scrollIntoView({behavior:'smooth'})">Get Started</button>
-      </div>
-    </div>
-
-    <!-- Sign Up Form -->
-    <div class="mem-form-wrapper">
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem;">
-        <h3>📝 Membership Registration</h3>
-        <div class="form-grid" id="memberForm">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="e.g. Lawrence">
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="e.g. D'Souza">
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="your@email.de">
-          </div>
-          <div class="form-group">
-            <label>Phone (WhatsApp)</label>
-            <input type="tel" placeholder="+49 ...">
-          </div>
-          <div class="form-group">
-            <label>City in Germany</label>
-            <input type="text" placeholder="e.g. Frankfurt">
-          </div>
-          <div class="form-group">
-            <label>Membership Type</label>
-            <select>
-              <option>Family (€15/year)</option>
-              <option>Individual (€10/year)</option>
-              <option>Student (€8/year)</option>
-            </select>
-          </div>
-          <div class="form-group full">
-            <label>Originally from (City/Town in India)</label>
-            <input type="text" placeholder="e.g. Mangalore, Udupi, Bantwal, Mulki…">
-          </div>
-          <div class="form-group full">
-            <label>Anything you'd like to share or get involved in?</label>
-            <textarea placeholder="e.g. I'd love to help with cultural events, Konkani classes, etc."></textarea>
-          </div>
-        </div>
-        <div class="form-submit">
-          <button class="btn btn-primary" style="padding: 0.9rem 2.5rem; font-size: 0.9rem;" onclick="handleSubmit()">
-            Submit Registration 🌺
-          </button>
-        </div>
-        <div class="success-msg" id="successMsg">
-          🎉 <strong>Deu boro dis dieum!</strong> Thank you for registering! A member of our committee will be in touch within 3–5 days to welcome you to the Konkani Kutam family.
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div style="text-align:center; padding: 2rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; max-width: 560px; margin: 0 auto 2rem;">
-      <p style="font-size:0.85rem; color: var(--muted); line-height: 1.8;">
-        📧 <strong>Email:</strong> info@konkanikutam.de<br>
-        📱 <strong>WhatsApp Group:</strong> Contact us to be added<br>
-        🌐 <strong>Facebook Group:</strong> Konkani Kutam Deutschland<br>
-        📍 <strong>Registered in:</strong> Frankfurt am Main, Germany
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════ GALLERY ══════════════ -->
-<section id="gallery">
-  <div class="section-wrapper">
-    <div class="section-header">
-      <div class="divider"><span>✦</span></div>
-      <h2>Our <em>Gallery</em></h2>
-      <p>Cherished moments from our celebrations — a glimpse into the warmth and joy of Konkani Kutam.</p>
-    </div>
-
-    <div class="gallery-filters">
-      <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
-      <button class="filter-btn" onclick="filterGallery('monthi-fest', this)">Monthi Fest</button>
-      <button class="filter-btn" onclick="filterGallery('summer-fest', this)">Summer Fest</button>
-      <button class="filter-btn" onclick="filterGallery('christmas', this)">Christmas</button>
-      <button class="filter-btn" onclick="filterGallery('easter', this)">Easter</button>
-    </div>
-
-    <div class="gallery-grid" id="galleryGrid">
-      <div class="gallery-item" data-category="monthi-fest" onclick="openLightbox('Images/2025_monthi_festh.jpg', 'Monthi Fest 2025', 'September 2025')">
-        <img src="Images/2025_monthi_festh.jpg" alt="Monthi Fest 2025" loading="lazy">
-        <div class="gallery-caption">
-          <h4>Monthi Fest 2025</h4>
-          <span>September 2025</span>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="monthi-fest" onclick="openLightbox('Images/2025_monthi_fest_flowers.jpg', 'Monthi Fest — Harvest Flowers', 'September 2025')">
-        <img src="Images/2025_monthi_fest_flowers.jpg" alt="Monthi Fest Flowers 2025" loading="lazy">
-        <div class="gallery-caption">
-          <h4>Monthi Fest — Harvest Flowers</h4>
-          <span>September 2025</span>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="summer-fest" onclick="openLightbox('Images/2025_summer_fest.jpg', 'Summer Fest 2025', 'July 2025')">
-        <img src="Images/2025_summer_fest.jpg" alt="Summer Fest 2025" loading="lazy">
-        <div class="gallery-caption">
-          <h4>Summer Fest 2025</h4>
-          <span>July 2025</span>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="christmas" onclick="openLightbox('Images/2025_christmas.jpg', 'Christmas Celebration 2025', 'December 2025')">
-        <img src="Images/2025_christmas.jpg" alt="Christmas 2025" loading="lazy">
-        <div class="gallery-caption">
-          <h4>Christmas Celebration 2025</h4>
-          <span>December 2025</span>
-        </div>
-      </div>
-      <div class="gallery-item" data-category="easter" onclick="openLightbox('Images/2026_easter_gathering.jpg', 'Easter Gathering 2026', 'April 2026')">
-        <img src="Images/2026_easter_gathering.jpg" alt="Easter Gathering 2026" loading="lazy">
-        <div class="gallery-caption">
-          <h4>Easter Gathering 2026</h4>
-          <span>April 2026</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Section containers — content loaded from pages/ -->
+<section id="home" class="active"></section>
+<section id="about"></section>
+<section id="events"></section>
+<section id="initiatives"></section>
+<section id="gallery"></section>
+<section id="membership"></section>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
@@ -1057,8 +603,7 @@
     document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(l => {
+    document.querySelectorAll('.nav-links a').forEach(l => {
       if (l.getAttribute('onclick') && l.getAttribute('onclick').includes(id)) l.classList.add('active');
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1068,13 +613,6 @@
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
-
-  fetch('docs/our-story.txt')
-    .then(r => r.text())
-    .then(text => {
-      document.getElementById('story-content').innerHTML =
-        text.trim().split(/\n\n+/).map(p => `<p>${p.trim()}</p>`).join('');
-    });
 
   function filterGallery(category, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1099,12 +637,31 @@
     }
   }
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') }); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') });
+  });
 
   function handleSubmit() {
     document.getElementById('successMsg').style.display = 'block';
     document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+
+  // Load all section pages in parallel, then load our-story content
+  const sections = ['home', 'about', 'events', 'initiatives', 'gallery', 'membership'];
+  Promise.all(
+    sections.map(id =>
+      fetch(`pages/${id}.html`)
+        .then(r => r.text())
+        .then(html => { document.getElementById(id).innerHTML = html; })
+    )
+  ).then(() => {
+    fetch('docs/our-story.txt')
+      .then(r => r.text())
+      .then(text => {
+        const el = document.getElementById('story-content');
+        if (el) el.innerHTML = text.trim().split(/\n\n+/).map(p => `<p>${p.trim()}</p>`).join('');
+      });
+  });
 </script>
 </body>
 </html>

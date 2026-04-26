@@ -1,0 +1,53 @@
+<div class="section-wrapper">
+  <div class="section-header">
+    <div class="divider"><span>✦</span></div>
+    <h2>Our <em>Gallery</em></h2>
+    <p>Cherished moments from our celebrations — a glimpse into the warmth and joy of Konkani Kutam.</p>
+  </div>
+
+  <div class="gallery-filters">
+    <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+    <button class="filter-btn" onclick="filterGallery('monthi-fest', this)">Monthi Fest</button>
+    <button class="filter-btn" onclick="filterGallery('summer-fest', this)">Summer Fest</button>
+    <button class="filter-btn" onclick="filterGallery('christmas', this)">Christmas</button>
+    <button class="filter-btn" onclick="filterGallery('easter', this)">Easter</button>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" data-category="monthi-fest" onclick="openLightbox('Images/2025_monthi_festh.jpg', 'Monthi Fest 2025', 'September 2025')">
+      <img src="Images/2025_monthi_festh.jpg" alt="Monthi Fest 2025" loading="lazy">
+      <div class="gallery-caption">
+        <h4>Monthi Fest 2025</h4>
+        <span>September 2025</span>
+      </div>
+    </div>
+    <div class="gallery-item" data-category="monthi-fest" onclick="openLightbox('Images/2025_monthi_fest_flowers.jpg', 'Monthi Fest — Harvest Flowers', 'September 2025')">
+      <img src="Images/2025_monthi_fest_flowers.jpg" alt="Monthi Fest Flowers 2025" loading="lazy">
+      <div class="gallery-caption">
+        <h4>Monthi Fest — Harvest Flowers</h4>
+        <span>September 2025</span>
+      </div>
+    </div>
+    <div class="gallery-item" data-category="summer-fest" onclick="openLightbox('Images/2025_summer_fest.jpg', 'Summer Fest 2025', 'July 2025')">
+      <img src="Images/2025_summer_fest.jpg" alt="Summer Fest 2025" loading="lazy">
+      <div class="gallery-caption">
+        <h4>Summer Fest 2025</h4>
+        <span>July 2025</span>
+      </div>
+    </div>
+    <div class="gallery-item" data-category="christmas" onclick="openLightbox('Images/2025_christmas.jpg', 'Christmas Celebration 2025', 'December 2025')">
+      <img src="Images/2025_christmas.jpg" alt="Christmas 2025" loading="lazy">
+      <div class="gallery-caption">
+        <h4>Christmas Celebration 2025</h4>
+        <span>December 2025</span>
+      </div>
+    </div>
+    <div class="gallery-item" data-category="easter" onclick="openLightbox('Images/2026_easter_gathering.jpg', 'Easter Gathering 2026', 'April 2026')">
+      <img src="Images/2026_easter_gathering.jpg" alt="Easter Gathering 2026" loading="lazy">
+      <div class="gallery-caption">
+        <h4>Easter Gathering 2026</h4>
+        <span>April 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
