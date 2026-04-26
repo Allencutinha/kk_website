@@ -508,6 +508,51 @@
   .lightbox-label h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
   .lightbox-label span { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
 
+  /* ── CONSTITUTION ── */
+  .constitution-hero {
+    background: linear-gradient(135deg, var(--deep-red) 0%, var(--dark) 100%);
+    padding: 4rem 2rem; text-align: center; color: var(--cream);
+  }
+  .constitution-hero h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 0.75rem; }
+  .constitution-hero h2 em { color: var(--gold); }
+  .constitution-hero p { color: rgba(253,246,236,0.7); max-width: 520px; margin: 0 auto 1.75rem; line-height: 1.7; }
+
+  .lang-toggle { display: flex; gap: 0.75rem; justify-content: center; }
+  .lang-btn {
+    padding: 0.5rem 1.4rem; border-radius: 20px; font-size: 0.82rem;
+    font-weight: 700; letter-spacing: 0.06em; cursor: pointer;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    background: transparent; color: rgba(255,255,255,0.65);
+    transition: all 0.2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--gold); color: var(--dark); border-color: var(--gold);
+  }
+
+  .constitution-content { max-width: 760px; margin: 0 auto; }
+  .constitution-section {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; color: var(--deep-red);
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .constitution-section:first-child { margin-top: 0; }
+  .constitution-preamble {
+    font-style: italic; color: var(--muted); margin-bottom: 0.5rem; font-size: 0.92rem; line-height: 1.7;
+  }
+  .constitution-item {
+    color: var(--text); font-size: 0.92rem; line-height: 1.8;
+    margin: 0.5rem 0; padding-left: 0.25rem;
+  }
+  .constitution-sub-item {
+    color: var(--text); font-size: 0.9rem; line-height: 1.75;
+    margin: 0.35rem 0; padding-left: 1.75rem;
+  }
+  .constitution-text {
+    color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin: 0.35rem 0;
+  }
+
   /* ── WHY KONKANI KUTAM — green / sky-blue card icons ── */
   .home-features .card-icon {
     background: linear-gradient(135deg, #82A85E, #5E8A40);
@@ -554,6 +599,7 @@
     <a href="#" onclick="showSection('events')">Events</a>
     <a href="#" onclick="showSection('initiatives')">Initiatives</a>
     <a href="#" onclick="showSection('gallery')">Gallery</a>
+    <a href="#" onclick="showSection('constitution')">Constitution</a>
     <a href="#" onclick="showSection('membership')" class="nav-join">Join Us</a>
   </div>
   <div class="hamburger" onclick="toggleMenu()">
@@ -568,6 +614,7 @@
 <section id="initiatives"></section>
 <section id="gallery"></section>
 <section id="membership"></section>
+<section id="constitution"></section>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
@@ -583,7 +630,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">✦ Konkani Kutam</div>
+  <div class="footer-logo">Konkani Kutam</div>
   <p>Amchi Kutam, Amcho Ghar — Our Family, Our Home.<br>Uniting Mangalorean Catholics across Germany since 2003</p>
   <div class="footer-links">
     <a href="#" onclick="showSection('home')">Home</a>
@@ -592,6 +639,7 @@
     <a href="#" onclick="showSection('initiatives')">Initiatives</a>
     <a href="#" onclick="showSection('gallery')">Gallery</a>
     <a href="#" onclick="showSection('membership')">Membership</a>
+    <a href="#" onclick="showSection('constitution')">Constitution</a>
   </div>
   <div class="footer-bottom">
     © 2025 Konkani Kutam e.V., Germany &nbsp;·&nbsp; Registered Non-Profit Association &nbsp;·&nbsp; All rights reserved
@@ -646,8 +694,44 @@
     document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
+  // Constitution parser
+  let currentConstitutionLang = 'de';
+  function loadConstitution(lang) {
+    fetch(`docs/constitution-${lang}.txt`)
+      .then(r => r.text())
+      .then(text => {
+        const el = document.getElementById('constitution-content');
+        if (!el) return;
+        const lines = text.split('\n');
+        let html = '';
+        lines.forEach(line => {
+          const t = line.trim();
+          if (!t) return;
+          if (/^§/.test(t)) {
+            html += `<h3 class="constitution-section">${t}</h3>`;
+          } else if (/^[0-9]+[.)]\s/.test(t)) {
+            html += `<p class="constitution-item">${t}</p>`;
+          } else if (/^[a-z][.)]\s/.test(t)) {
+            html += `<p class="constitution-sub-item">${t}</p>`;
+          } else if (/^(Vereinssatzung|Association Articles)/.test(t)) {
+            html += `<p class="constitution-preamble">${t}</p>`;
+          } else {
+            html += `<p class="constitution-text">${t}</p>`;
+          }
+        });
+        el.innerHTML = html;
+      });
+  }
+
+  function switchConstitutionLang(lang, btn) {
+    currentConstitutionLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadConstitution(lang);
+  }
+
   // Load all section pages in parallel, then load our-story content
-  const sections = ['home', 'about', 'events', 'initiatives', 'gallery', 'membership'];
+  const sections = ['home', 'about', 'events', 'initiatives', 'gallery', 'membership', 'constitution'];
   Promise.all(
     sections.map(id =>
       fetch(`pages/${id}.html`)
@@ -661,6 +745,7 @@
         const el = document.getElementById('story-content');
         if (el) el.innerHTML = text.trim().split(/\n\n+/).map(p => `<p>${p.trim()}</p>`).join('');
       });
+    loadConstitution('de');
   });
 </script>
 </body>
